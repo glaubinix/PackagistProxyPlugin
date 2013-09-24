@@ -43,7 +43,6 @@ class ProxyPlugin implements PluginInterface, EventSubscriberInterface
 
 	public function onPreFileDownload(PreFileDownloadEvent $event)
 	{
-		print_r($event);
 		$client = new ProxyClient($this->io, $this->composer->getConfig());
 		$event->setRemoteFilesystem(new ProxyRemoteFilesystem($this->io, $event->getRemoteFilesystem()->getOptions(), $client));
 	}

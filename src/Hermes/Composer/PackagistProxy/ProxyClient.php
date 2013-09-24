@@ -49,12 +49,11 @@ class ProxyClient {
 				throw new \Exception($errorMessage);
 			}
 
-
 			$client = new Client($url);
 			$request = $client->get('/');
 			$response_body = EntityBody::factory(fopen($to, 'w+'));
 			$request->setResponseBody($response_body);
-			$response = $request->send();
+			$request->send();
 
 			if ($progress) {
 				$this->io->overwrite("    Downloading: <comment>100%</comment>");
