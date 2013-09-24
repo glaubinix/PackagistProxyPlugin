@@ -12,6 +12,9 @@
 			"email": "norman.soetbeer@gmail.com"
 		}
     ],
+    "extra": {
+        "class": "Hermes\\Composer\\PackagistProxy\\ProxyPlugin"
+    },
     "require": {
 		"composer-plugin-api": "1.0.0"
     }
