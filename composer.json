@@ -1,5 +1,5 @@
 {
-    "name": "Hermes/packagist-proxy-plugin",
+    "name": "hermes/packagist-proxy-plugin",
 	"type": "composer-plugin",
     "license": "MIT",
     "authors": [
