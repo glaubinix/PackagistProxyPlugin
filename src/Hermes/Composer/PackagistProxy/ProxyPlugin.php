@@ -22,6 +22,10 @@ class ProxyPlugin implements PluginInterface, EventSubscriberInterface
 	 */
 	protected $io;
 
+	/**
+	 * @param Composer $composer
+	 * @param IOInterface $io
+	 */
 	public function activate(Composer $composer, IOInterface $io)
 	{
 		$this->composer = $composer;
@@ -39,9 +43,9 @@ class ProxyPlugin implements PluginInterface, EventSubscriberInterface
 
 	public function onPreFileDownload(PreFileDownloadEvent $event)
 	{
-		$protocol = parse_url($event->getProcessedUrl(), PHP_URL_SCHEME);
-
-
+		print_r($event);
+		$client = new ProxyClient($this->io, $this->composer->getConfig());
+		$event->setRemoteFilesystem(new ProxyRemoteFilesystem($this->io, $event->getRemoteFilesystem()->getOptions(), $client));
 	}
 
 }
