@@ -1,5 +1,5 @@
 {
-    "name": "Hermes/packagist-proxy-plugin",
+    "name": "hermes/packagist-proxy-plugin",
 	"type": "composer-plugin",
     "license": "MIT",
     "authors": [
@@ -12,8 +12,16 @@
 			"email": "norman.soetbeer@gmail.com"
 		}
     ],
+    "extra": {
+        "class": "Hermes\\Composer\\PackagistProxy\\ProxyPlugin"
+    },
     "require": {
 		"composer-plugin-api": "1.0.0",
 		"guzzle/guzzle": "v3.7.3"
-    }
+    },
+    "autoload": {
+		"psr-0": {
+			"Hermes\\Composer\\PackagistProxy": "src/"
+		}
+	}
 }
