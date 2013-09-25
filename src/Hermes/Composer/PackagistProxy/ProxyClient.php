@@ -50,7 +50,7 @@ class ProxyClient {
 			}
 
 			$client = new Client($this->config->get('packagist-proxy-url'));
-			$request = $client->get('?file=' .base64_encode($url));
+			$request = $client->get('?file=' . urlencode($url));
 			$response_body = EntityBody::factory(fopen($to, 'w+'));
 			$request->setResponseBody($response_body);
 			$request->send();

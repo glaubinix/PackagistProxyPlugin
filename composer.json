@@ -17,7 +17,7 @@
     },
     "require": {
 		"composer-plugin-api": "1.0.0",
-		"guzzle/guzzle": "v3.7.3"
+		"guzzle/http": "v3.7.3"
     },
     "autoload": {
 		"psr-0": {
